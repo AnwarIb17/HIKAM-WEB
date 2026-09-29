@@ -1,0 +1,898 @@
+:root {
+  --primary: #0d4a3e;
+  --primary-dark: #072a23;
+  --primary-light: #166b5a;
+  --accent: #c59b27;
+  --accent-light: #dfb746;
+  --bg-main: #f8faf9;
+  --bg-card: #ffffff;
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(13, 74, 62, 0.08);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0c1412;
+  --bg-card: #15221f;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border-color: #243b35;
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  word-break: break-word;
+}
+
+.container {
+  width: 92%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* Header Utama (Smart Sticky Auto-Hide) */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Kelas saat header sembunyi ke atas */
+.site-header.header-hidden {
+  transform: translateY(-100%);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arabic-brand {
+  font-family: "Amiri", serif;
+  font-size: 1.75rem;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.brand h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+}
+
+[data-theme="dark"] .brand h1 {
+  color: #52c5a8;
+}
+
+.brand p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.icon-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: #fff;
+  padding: 2.5rem 0;
+  text-align: center;
+  border-bottom: 4px solid var(--accent);
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: "Amiri", serif;
+  font-size: 1rem;
+  background: rgba(197, 155, 39, 0.2);
+  color: var(--accent-light);
+  border: 1px solid var(--accent);
+  padding: 3px 14px;
+  border-radius: 50px;
+  margin-bottom: 0.75rem;
+}
+
+.hero-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+}
+
+.author-name {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  max-width: 750px;
+  margin: 0 auto 1.5rem;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  min-width: 120px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-light);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #d1d5db;
+}
+
+/* Home Section & Grid */
+.home-hikmah-section {
+  padding: 2.5rem 0 1.5rem;
+}
+
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title-wrap h2 {
+  font-size: 1.6rem;
+  color: var(--primary);
+  margin-top: 0.4rem;
+}
+
+[data-theme="dark"] .section-title-wrap h2 {
+  color: #52c5a8;
+}
+
+.section-title-wrap p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.hikmah-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.home-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  border-top: 4px solid var(--primary);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-3px);
+  border-top-color: var(--accent);
+}
+
+.home-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.card-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.home-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.home-card-arabic {
+  font-family: "Amiri", serif;
+  font-size: 1.15rem;
+  direction: rtl;
+  text-align: right;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .home-card-arabic {
+  color: #6ee7b7;
+}
+
+.home-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.status-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.status-badge.ready {
+  background: rgba(13, 74, 62, 0.12);
+  color: var(--primary);
+}
+
+[data-theme="dark"] .status-badge.ready {
+  color: #52c5a8;
+}
+
+.status-badge.draft {
+  background: rgba(107, 114, 128, 0.12);
+  color: var(--text-muted);
+}
+
+/* Pagination Bar */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 2rem 0 1rem;
+}
+
+.page-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  min-width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.page-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+/* Area Detail Baca & Top Bar (Smart Sticky Auto-Hide) */
+.detail-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 57px; /* Menempel tepat di bawah header */
+  z-index: 95;
+  background: var(--bg-main);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Saat scroll ke bawah, bar tombol ikut meluncur ke atas */
+.detail-top-bar.bar-hidden {
+  transform: translateY(-200%);
+}
+
+/* Sembunyikan tombol mobile drawer di layar desktop */
+.mobile-menu-btn {
+  display: none;
+}
+
+.mobile-close-sidebar {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.sidebar-backdrop {
+  display: none;
+}
+
+/* Layout 2 Kolom untuk Desktop */
+.main-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.75rem;
+  margin: 1rem auto 3rem;
+  align-items: start;
+}
+
+/* Sidebar Panel Normal di Desktop */
+.sidebar-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  position: sticky;
+  top: 110px;
+  max-height: calc(100vh - 130px);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.count-badge {
+  background: rgba(197, 155, 39, 0.15);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.search-box {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 7px 10px 7px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.chip {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 3px 8px;
+  font-size: 0.7rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.chip.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.hikmah-list {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hikmah-item {
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  background: var(--bg-card);
+}
+
+.hikmah-item.active {
+  background: rgba(13, 74, 62, 0.08);
+  border-color: var(--primary);
+}
+
+.item-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.item-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Panel Penampil Detail */
+.viewer-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  min-width: 0;
+}
+
+.viewer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.hikmah-meta-tag {
+  background: rgba(13, 74, 62, 0.1);
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.action-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hikmah-number-badge {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.hikmah-title {
+  font-size: 1.4rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.arabic-container {
+  background: var(--bg-main);
+  border-right: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: right;
+}
+
+.arabic-text {
+  font-family: "Amiri", serif;
+  font-size: 1.6rem;
+  line-height: 2.1;
+  direction: rtl;
+}
+
+.translation-container {
+  background: rgba(197, 155, 39, 0.06);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.5rem;
+}
+
+.translation-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.syarah-container h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+[data-theme="dark"] .syarah-container h4 {
+  color: var(--accent-light);
+}
+
+.syarah-text {
+  font-size: 0.92rem;
+  line-height: 1.75;
+}
+
+/* Modul Custom Syarah Islami */
+.meta-badge-top {
+  display: inline-block;
+  background: rgba(13, 74, 62, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(13, 74, 62, 0.2);
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+[data-theme="dark"] .meta-badge-top {
+  color: #52c5a8;
+  background: rgba(82, 197, 168, 0.1);
+  border-color: rgba(82, 197, 168, 0.25);
+}
+
+.meta-dark-card {
+  background: #0f2d25;
+  color: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.meta-dark-card h3,
+.meta-dark-card h4 {
+  color: #fef08a !important;
+}
+
+.meta-flow-step {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  background: var(--bg-card);
+}
+
+.meta-number-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.meta-item-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.meta-num-circle {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.meta-quote-pill {
+  background: rgba(197, 155, 39, 0.08);
+  border: 1px solid rgba(197, 155, 39, 0.2);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin: 1rem 0;
+}
+
+/* Navigasi Bawah */
+.viewer-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  gap: 8px;
+}
+
+.nav-btn {
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  max-width: 380px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-close-btn {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 8px 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+/* ==========================================================
+   PENYESUAIAN KHUSUS MOBILE & DRAWER OFF-CANVAS (≤ 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+  .container {
+    width: 94%;
+  }
+
+  .detail-top-bar {
+    padding: 0.65rem 0;
+    top: 55px;
+  }
+
+  /* Tombol menu garis tiga HANYA muncul di HP */
+  .mobile-menu-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+
+  /* Tombol silang di drawer HANYA muncul di HP */
+  .mobile-close-sidebar {
+    display: block !important;
+  }
+
+  /* Backdrop gelap untuk drawer di HP */
+  .sidebar-backdrop {
+    display: block !important;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .sidebar-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Sidebar berubah menjadi Drawer meluncur dari kiri di HP */
+  .sidebar-panel {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: -320px !important;
+    width: 290px;
+    height: 100vh;
+    max-height: 100vh !important;
+    z-index: 999;
+    background: var(--bg-card);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    border-radius: 0 16px 16px 0 !important;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 1.25rem 1rem;
+  }
+
+  /* Saat drawer dibuka di HP */
+  .sidebar-panel.drawer-open {
+    left: 0 !important;
+  }
+
+  /* Konten utama di HP satu kolom penuh */
+  .main-content {
+    grid-template-columns: 1fr;
+    margin: 0.5rem auto 2rem;
+    gap: 0;
+  }
+
+  .viewer-panel {
+    padding: 1.15rem;
+    border-radius: var(--radius-md);
+  }
+
+  .arabic-text {
+    font-size: 1.35rem;
+    line-height: 2;
+  }
+
+  .arabic-container {
+    padding: 1rem;
+  }
+
+  .hikmah-title {
+    font-size: 1.2rem;
+  }
+
+  .translation-text {
+    font-size: 0.88rem;
+  }
+
+  .syarah-text {
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  .meta-dark-card {
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .meta-dark-card h3,
+  .meta-dark-card h4 {
+    font-size: 1.15rem !important;
+  }
+
+  .meta-flow-step {
+    padding: 0.75rem;
+  }
+
+  .viewer-footer {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+  }
+}
+
+/* Pastikan header sidebar tidak menciut */
+.sidebar-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Pastikan kolom pencarian tidak menciut */
+.search-box {
+  flex-shrink: 0;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+/* KUNCI UTAMA: flex-shrink: 0 agar filter chips tidak pernah gepeng/mengecil */
+.filter-chips {
+  flex-shrink: 0 !important;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  margin-bottom: 0.75rem;
+  scrollbar-width: thin; /* Tampilan scrollbar rapi */
+}
+
+/* Pastikan tombol chip di dalamnya mempertahankan ukuran */
+.chip {
+  flex-shrink: 0;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  border-radius: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Biarkan hanya daftar hikmah yang fleksibel dan menampung scroll */
+.hikmah-list {
+  flex: 1 1 auto;
+  min-height: 0; /* Wajib di flexbox agar scroll internal aktif sempurna */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
