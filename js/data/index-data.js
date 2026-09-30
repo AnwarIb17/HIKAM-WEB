@@ -50,6 +50,11 @@ if (typeof hikmah09 !== "undefined") {
   hikmahTersedia.push(hikmah09);
 }
 
+if (typeof hikmah10 !== "undefined") {
+  hikmah10.isReady = true;
+  hikmahTersedia.push(hikmah10);
+}
+
 // Buat sisa placeholder otomatis (dari nomor setelah hikmah terakhir sampai 26)
 const nomorMulai = hikmahTersedia.length + 1;
 const jumlahSisa = Math.max(0, 26 - hikmahTersedia.length);

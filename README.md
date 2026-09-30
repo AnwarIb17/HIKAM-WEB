@@ -19,7 +19,7 @@ Aplikasi web interaktif dan kontemplatif untuk menyelami kedalaman mahakarya tas
 
 ## 📚 Daftar Materi Kajian yang Tersedia
 
-Sembilan hikmah telah tersedia untuk dibaca (_Siap Dibaca_), sedangkan nomor berikutnya masih berupa _placeholder_ dan akan dilengkapi bertahap.
+Sepuluh hikmah telah tersedia untuk dibaca (_Siap Dibaca_), sedangkan nomor berikutnya masih berupa _placeholder_ dan akan dilengkapi bertahap.
 
 | No.     | Judul                                           | Kategori          | Fokus Kajian                                                                                                                 |
 | ------- | ----------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -32,9 +32,10 @@ Sembilan hikmah telah tersedia untuk dibaca (_Siap Dibaca_), sedangkan nomor ber
 | #07     | Menjaga Basirah Ketika Janji Tertunda           | Basirah & Yaqin   | Tafsir kata kunci, Rahasia Kenapa Belum Terjadi, Rantai Janji, _Rabth_, Dalil Janji Allah yang pasti                         |
 | #08     | Pintu Ta'arruf di Balik Balā' — Wijhah Ma'rifat | Ma'rifat & Balā'  | 2 bagian: Maqom Ta'arruf & Mitsal Balā'; Hadits Qudsi, Qoul _Al-Hakim At-Tirmidzi_, Tiga Kisah Wali                          |
 | #09     | Ragam Amal Lahir dari Ragam Warid Hati          | Warid & Hal Qalbi | Definisi _Waridatul Ahwal_, Empat Warni Hati (Haibah, Uns, Qabdh, Basth), Kaidah Emas, Kunci Penutup                         |
-| #10–#26 | _Segera Hadir / Dalam Penyusunan_               | Kearifan Tasawuf  | Placeholder otomatis — dapat dibuka setelah materi ditulis                                                                   |
+| #10     | Ruhnya Amal Adalah Ikhlas                       | Ikhlas & Tauhid   | Ikhlas Abrar vs Muqarrabin, Tafsir 4 Unsur, Tahqiq _Iyyaka Na'budu_ & _Wa Iyyaka Nasta'in_, _Shidq_, 5 Pasang Lillah vs Billah (Imam Al-Qusyairi) |
+| #11–#26 | _Segera Hadir / Dalam Penyusunan_               | Kearifan Tasawuf  | Placeholder otomatis — dapat dibuka setelah materi ditulis                                                                   |
 
-> **Catatan navigasi:** Beranda menampilkan 9 kartu per halaman. Hikmah #10 ke atas masih terkunci dan menampilkan modal _"Materi Sedang Disusun"_ ketika diklik.
+> **Catatan navigasi:** Beranda menampilkan 9 kartu per halaman. Hikmah #11 ke atas masih terkunci dan menampilkan modal _"Materi Sedang Disusun"_ ketika diklik.
 
 ---
 
@@ -56,7 +57,7 @@ HIKAM-WEB/
 │   └── style.css
 ├── js/
 │   ├── data/
-│   │   ├── index-data.js     # Pusat data: agregasi hikmah + placeholder otomatis #10–#26
+│   │   ├── index-data.js     # Pusat data: agregasi hikmah + placeholder otomatis #11–#26
 │   │   ├── hikmah-01.js      # ... s.d.
 │   │   ├── hikmah-02.js
 │   │   ├── hikmah-03.js
@@ -65,7 +66,8 @@ HIKAM-WEB/
 │   │   ├── hikmah-06.js
 │   │   ├── hikmah-07.js
 │   │   ├── hikmah-08.js
-│   │   └── hikmah-09.js
+│   │   ├── hikmah-09.js
+│   │   └── hikmah-10.js
 │   └── app.js                # Logika SPA: routing, pagination, filter, tema, dsb.
 └── index.html
 ```
